@@ -1,0 +1,6 @@
+FROM ubuntu:latest
+MAINTAINER VIPUL SAINI "kvipul.saini@gmail.com"
+ENV version=docker
+RUN apt-get update && apt-get install -y openjdk-8-jdk
+ADD pma-app.jar .
+ENTRYPOINT ["java", "-jar", "pma-app.jar"]
